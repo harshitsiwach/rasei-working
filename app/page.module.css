@@ -1,0 +1,363 @@
+
+.main {
+  width: 100%;
+}
+
+/* Hero Section */
+.heroSection {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.cityscapeBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 80%, transparent 20%, rgba(0,0,0,0.1) 21%, rgba(0,0,0,0.1) 25%, transparent 26%);
+  background-size: cover, 4px 4px;
+  background-repeat: no-repeat, repeat;
+  background-color: #f0f0f0; /* Placeholder for neo-tokyo-skyline.svg */
+}
+
+.speedLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, transparent 49%, #000000 50%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, #000000 50%, transparent 51%);
+  background-size: 60px 20px, 40px 15px;
+  opacity: 0.1;
+  animation: speed-motion 3s linear infinite;
+}
+
+@keyframes speed-motion {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(100px); }
+}
+
+.halftoneOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, #000000 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #000000 1px, transparent 1px);
+  background-size: 20px 20px, 15px 15px;
+  opacity: 0.05;
+}
+
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.mainLogo {
+  filter: drop-shadow(4px 4px 0px #000000);
+  margin-bottom: 30px;
+}
+
+.speechBubble {
+  background: #FFFFFF;
+  border: 4px solid #000000;
+  border-radius: 20px 20px 20px 5px;
+  padding: 25px 35px;
+  position: relative;
+  margin-bottom: 40px;
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.speechBubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #000000;
+}
+
+.catchphrase {
+  font-family: 'Bangers', 'Comic Sans MS', cursive;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 0px #CCCCCC;
+}
+
+.subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.2rem;
+  color: #666666;
+  margin: 0;
+}
+
+.ctaPanelButton {
+  background: #000000;
+  color: #FFFFFF;
+  border: 4px solid #000000;
+  padding: 18px 45px;
+  font-family: 'Bangers', cursive;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  transform: skew(-5deg);
+  transition: all 0.2s ease;
+  box-shadow: 6px 6px 0px #666666;
+}
+
+.ctaPanelButton:hover {
+  background: #FFFFFF;
+  color: #000000;
+  transform: skew(-5deg) translateY(-3px);
+  box-shadow: 9px 9px 0px #666666;
+}
+
+.ctaPanelButton::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      #000000 2px,
+      #000000 4px
+    );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ctaPanelButton:hover::before {
+  opacity: 0.3;
+}
+
+/* Features Section */
+.featuresPanels {
+  padding: 80px 40px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.comicGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  transform: rotate(-1deg);
+}
+
+.featurePanel {
+  background: #FFFFFF;
+  border: 5px solid #000000;
+  padding: 40px 25px;
+  text-align: center;
+  position: relative;
+  box-shadow: 8px 8px 0px #000000;
+  transition: transform 0.3s ease;
+}
+
+.featurePanel:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: 12px 12px 0px #000000;
+}
+
+.featurePanel::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background: 
+    radial-gradient(circle, #000000 30%, transparent 30%),
+    radial-gradient(circle, #000000 30%, transparent 30%);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+}
+
+.panel1 { transform: rotate(-3deg); }
+.panel2 { transform: rotate(1deg); }  
+.panel3 { transform: rotate(-2deg); }
+
+.featurePanel h3 {
+  font-family: 'Bangers', cursive;
+  font-size: 1.8rem;
+  color: #000000;
+  margin: 20px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featurePanel p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.4;
+}
+
+.panelIcon {
+  font-size: 3rem;
+  filter: grayscale(100%) contrast(200%);
+}
+
+/* Story Section */
+.storySection {
+  background: 
+    linear-gradient(90deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(0,0,0,0.1) 50%, transparent 51%);
+  background-size: 30px 30px;
+  padding: 100px 40px;
+  position: relative;
+}
+
+.storyPanel {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 6px solid #000000;
+  padding: 50px;
+  position: relative;
+  box-shadow: 12px 12px 0px #000000;
+  transform: rotate(-1deg);
+}
+
+.storyPanel::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px dashed #666666;
+  pointer-events: none;
+}
+
+.storyTitle {
+  font-family: 'Bangers', cursive;
+  font-size: 2.5rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.storyTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #000000;
+}
+
+.storyContent p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  text-align: center;
+}
+
+.katanaDecoration {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  width: 30px;
+  height: 4px;
+  background: #000000;
+  transform: rotate(45deg);
+}
+
+.katanaDecoration::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: -2px;
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comicGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    transform: none;
+  }
+  
+  .featurePanel {
+    transform: none !important;
+  }
+  
+  .featurePanel:hover {
+    transform: translateY(-5px) !important;
+  }
+  
+  .catchphrase {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .mainLogo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .storyPanel {
+    padding: 30px;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding: 0 20px;
+  }
+  
+  .speechBubble {
+    padding: 20px;
+  }
+  
+  .catchphrase {
+    font-size: 1.5rem;
+  }
+  
+  .ctaPanelButton {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+}
