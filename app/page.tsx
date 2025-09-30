@@ -31,7 +31,7 @@ export default function Home() {
           <div className={`${styles.featurePanel} ${styles.panel2}`}>
             <div className={styles.panelIcon}>🏙️</div>
             <h3>CYBERPUNK WORLD</h3>
-            <p>Race through Neo-Tokyo's neon maze</p>
+            <p>Race through Neo-Tokyo&apos;s neon maze</p>
           </div>
           <div className={`${styles.featurePanel} ${styles.panel3}`}>
             <div className={styles.panelIcon}>🏎️</div>
